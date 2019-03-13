@@ -3,9 +3,8 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 
 const Pagination = (props) => {
-	const pageCount = (props.itemsCount < props.pageSize) ? 0 : Math.ceil(props.itemsCount/props.pageSize);
+	const pageCount = (props.itemsCount <= props.pageSize) ? 0 : Math.ceil(props.itemsCount/props.pageSize);
 	const pageArr = _.range(1,pageCount+1);
-
 	return (
 		<nav className="m-3">
 		  <ul className="pagination">
